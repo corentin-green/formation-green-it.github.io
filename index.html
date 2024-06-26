@@ -62,8 +62,10 @@
 
         :root {
             --primary-blue: #082942;
+            --secondary-blue: #0065B8;
             --primary-green: #37C44D;
             --primary-green-hover: #2EAC42;
+            --primary-margin: 2.188rem;
             --second-margin: 1.125rem;
         }
 
@@ -118,6 +120,44 @@
         main {
             margin-top: 6.25rem;
         }
+
+        section {
+            padding-top: var(--primary-margin);
+            padding-bottom: var(--primary-margin);
+        }
+
+        #title h1,
+        #title h2,
+        #title div {
+            max-width: 56.25rem;
+            text-align: center;
+            margin: auto;
+        }
+
+        #title h1 {
+            color: var(--primary-blue);
+            font-size: 3.75rem;
+
+        }
+
+        #title h1 em {
+            color: var(--primary-green);
+        }
+
+        #title h2 {
+            margin-top: var(--primary-margin);
+            color: var(--secondary-blue);
+            font-size: 3rem;
+        }
+
+        #title button {
+            margin-top: var(--primary-margin);
+        }
+
+        #keyLearn {
+            background-color: var(--primary-blue);
+            color: #FFF;
+        }
     </style>
 </head>
 
@@ -129,6 +169,19 @@
         <button class="main k2d-semibold">Réservez votre formation</button>
     </header>
     <main>
+        <section id="title">
+            <h1 class="k2d-bold">Apprenez à concevoir des applications <em>sobre</em>
+                et <em>éco-conçu</em></h1>
+            <h2 class="k2d-regular-italic">Devenez autonome dans l'art du GreenIT</h2>
+            <div><button class="main k2d-semibold">Réservez votre formation complète</button></div>
+        </section>
+        <section id="keyLearn">
+            <ul>
+                <li>Apprenez les impacts du numériques sur l'environnement</li>
+                <li>Concevez des applications plus sobre avec l'éco-conception de service numérique</li>
+                <li>Mesurez votre performance environnementale et communiquez la.</li>
+            </ul>
+        </section>
         <p>1er paragraphe</p>
         <p>
             Per egestas leo lobortis ullamcorper velit nec dui egestas. Urna pharetra netus, sed phasellus molestie
