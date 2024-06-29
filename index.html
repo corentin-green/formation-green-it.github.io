@@ -81,6 +81,8 @@
             --secondary-blue: #0065B8;
             --primary-green: #37C44D;
             --primary-green-hover: #2EAC42;
+            --third-green: #26853D;
+            --dark-green: #1A5B36;
             --light-green: #F3FBF4;
             --primary-margin: 2.188rem;
             --second-margin: 1.125rem;
@@ -138,6 +140,10 @@
             margin-top: 6.25rem;
         }
 
+        h2 {
+            font-size: 3rem;
+        }
+
         section {
             padding-top: var(--primary-margin);
             padding-bottom: var(--primary-margin);
@@ -146,7 +152,8 @@
         #title h1,
         #title h2,
         #title div,
-        #keys h2 {
+        #keys h2,
+        #program h2 {
             max-width: 56.25rem;
             text-align: center;
             margin: auto;
@@ -165,7 +172,6 @@
         #title h2 {
             margin-top: var(--primary-margin);
             color: var(--secondary-blue);
-            font-size: 3rem;
         }
 
         #title button {
@@ -195,25 +201,119 @@
 
         #keys {
             background-color: var(--light-green);
+            padding-left: var(--second-margin);
+            padding-right: var(--second-margin);
         }
 
         #keys h2 {
             color: var(--primary-blue);
-            font-size: 3rem;
         }
 
-        #keys ul {
+        #keys div {
             display: flex;
+            justify-content: space-between;
+            align-items: stretch;
         }
 
-        #keys ul li {
-            list-style: none;
-        }
-
-        #keys .h3 {
-            font-size: 30px;
-            /* FIXME */
+        #keys h3 {
+            font-size: 1.875rem;
             color: var(--primary-blue);
+            text-align: center;
+            margin-top: var(--second-margin);
+            margin-bottom: var(--second-margin);
+        }
+
+        #keys img {
+            width: 6.25rem;
+            height: 6.25rem;
+            margin: auto;
+        }
+
+        #keys article {
+            max-width: 17rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #keys p {
+            font-size: 1.25rem;
+        }
+
+        #program {
+            color: #FFF;
+            background-color: var(--dark-green);
+            padding-left: 8.938rem;
+        }
+
+        #program .col-container {
+            display: flex;
+            margin-right: 8.938rem;
+        }
+
+        #program .col:first-child {
+            margin-right: var(--primary-margin);
+        }
+
+        #program .col {
+            width: 100%;
+        }
+
+        #program .p:first-child {
+            margin-top: 0;
+        }
+
+        #program .p {
+            margin-top: var(--primary-margin);
+        }
+
+        #program .program-title {
+            background-color: var(--third-green);
+            height: 4.063rem;
+            border-top-left-radius: 2rem;
+            border-bottom-right-radius: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 50rem;
+            cursor: pointer;
+        }
+
+        #program .program-title img {
+            width: 2.688rem;
+            height: 1.563rem;
+            margin-right: 1.875rem;
+        }
+
+        #program .program-title h3 {
+            font-size: 1.875rem;
+            margin-left: 1.875rem;
+        }
+
+        #program .program-title.opened img#down {
+            display: none;
+        }
+
+        #program .program-title:not(.opened) img#up {
+            display: none;
+        }
+
+        #program .program-item {
+            color: var(--primary-blue);
+            background-color: #F3FBF4;
+            max-width: calc(45.563rem - 2 * var(--primary-margin));
+            padding: var(--primary-margin);
+            border-bottom-right-radius: 1.875rem;
+            margin-left: var(--primary-margin);
+            margin-right: var(--primary-margin);
+        }
+
+        #program .program-item ul {
+            margin: 0;
+            font-size: 1.25rem;
+        }
+
+        .hide {
+            display: none;
         }
     </style>
 </head>
@@ -241,25 +341,255 @@
         </section>
         <section id="keys">
             <h2 class="k2d-semibold">Points clés du numériques</h2>
-            <ul>
-                <li>
+            <div>
+                <article>
                     <img src="assets/co2.svg" alt="co2 équivalent" />
-                    <span class="h3 k2d-medium">Empreinte Carbone</span>
-                </li>
-                <li>
+                    <h3 class="k2d-medium">Empreinte Carbone</h3>
+                    <p><em class="bai-jamjuree-bold">3 x</em> les ressources (eau, énergies, matières premières)
+                        consommées par la France ou l'Angleterre.</p>
+                </article>
+                <article>
                     <img src="assets/handshake.svg" alt="main qui se sert" />
-                    <span class="h3 k2d-medium">COP 21</span>
-                </li>
-                <li>
+                    <h3 class="k2d-medium">COP 21</h3>
+                    <p><em class="bai-jamjuree-bold">21 %</em> des émissions de gaz à effet de serre admissibles pour
+                        rester dans l'accord de Paris</p>
+                </article>
+                <article>
                     <img src="assets/ges.svg" alt="planète avec un nuage et un tête de mort" />
-                    <span class="h3 k2d-medium">Gaz à Effet de Serre</span>
-                </li>
-                <li>
+                    <h3 class="k2d-medium">Gaz à Effet de Serre</h3>
+                    <p><em class="bai-jamjuree-bold">4 %</em> des émissions mondiales de gaz à effet</p>
+                </article>
+                <article>
                     <img src="assets/flashlight.svg" alt="éclaire" />
-                    <span class="h3 k2d-medium">Electricité</span>
-                </li>
-            </ul>
+                    <h3 class="k2d-medium">Electricité</h3>
+                    <p><em class="bai-jamjuree-bold">10 %</em> de l'électricité produite dans le monde</p>
+                </article>
+            </div>
+            <h3 class="k2d-medium" style="text-align: left;">Règlementaire</h3>
+            <p>La loi REEN impose actuellement aux communes de plus de 50 000 habitants et aux EPCI
+                à fiscalité propre regroupant plus de 50 000 habitants de définir une stratégie numérique responsable.
+            </p>
+            <p>Il faut noter que cette obligation légale uniquement imposée aux communes sera aussi imposée aux grandes
+                entreprises dans un second temps.</p>
+
         </section>
+        <section id="program">
+            <h2 class="k2d-semibold">Le programme</h2>
+            <p>Voici le détail de sujets abordés pendant votre formation d'une journée.</p>
+
+            <div class="col-container">
+                <div class="col">
+
+                    <div class="p">
+                        <div class="program-title">
+                            <h3 class="k2d-medium">Context</h3>
+                            <img id="down" src="assets/arrow_down.svg" alt="pointe de flèche vers le bas" />
+                            <img id="up" src="assets/arrow_up.svg" alt="pointe de flèche vers le haut" />
+                        </div>
+                        <div class="program-item hide">
+                            <ul class="bai-jamjuree-regular">
+                                <li>Les 3 piliers du développement durable</li>
+                                <li>Rappel au sujet du réchauffement climatique</li>
+                                <li>Les 9 limites de la planète : extension de l'impact en dehors des gas à effet de
+                                    serre
+                                </li>
+                                <li>Digital Impact</li>
+                                <li>Chiffres</li>
+                                <li>Explication du terme "sustainable" anglais et durable français</li>
+                                <li>En quoi la création logiciel impact l'environnement</li>
+                                <li>Sustainable hardware</li>
+                                <li>Métaux Rares (Mines)</li>
+                                <li>Terre Rares / pays</li>
+                                <li>Terre Rares / smartphone</li>
+                                <li>Coût sur le non-humain</li>
+                                <li>Analyse globale : Du berceau à la tombe</li>
+                                <li>Impact des données</li>
+                                <li>Empreinte du numérique au travail</li>
+                                <li>Objets connectés à internet</li>
+                                <li>Impact d'un ordinateur portable</li>
+                                <li>Impact laptop, écran , smartphone</li>
+                                <li>Impact de l'extraction de l'or et de son recyclage</li>
+                                <li>Impact de l'utilisation des batteries : usure et recyclage</li>
+                                <li>MIPS Material Input Per Service Unit</li>
+                                <li>Epuisement des réserves de matières premières</li>
+                                <li>Durée de vie des réserves rentables</li>
+                                <li>L'effet Rebond : ce qui nous ralentit</li>
+                                <li>Service rendu par la planète</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="p">
+                        <div class="program-title">
+                            <h3 class="k2d-medium">Ops</h3>
+                            <img id="down" src="assets/arrow_down.svg" alt="pointe de flèche vers le bas" />
+                            <img id="up" src="assets/arrow_up.svg" alt="pointe de flèche vers le haut" />
+                        </div>
+                        <div class="program-item hide">
+                            <ul>
+
+                                <li>Gestion des incidents</li>
+                                <li>Hardware reuse</li>
+                                <li>BYOD : Bring Your Own Device</li>
+                                <li>Devant son ordinateur</li>
+                                <li>Stockage cloud</li>
+                                <li>Cloud : utilisation et bonnes pratiques</li>
+                                <li>Scaling up & down</li>
+                                <li>Shifting application</li>
+                                <li>Response time et Datacenter</li>
+                                <li>Mobile Network</li>
+                                <li>4G</li>
+                                <li>5G</li>
+                                <li>Wi-Fi</li>
+                                <li>Monitoring : CPU, Mémoire, Disque, …</li>
+                                <li>CI / CD</li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="p">
+                        <div class="program-title">
+                            <h3 class="k2d-medium">Actions</h3>
+                            <img id="down" src="assets/arrow_down.svg" alt="pointe de flèche vers le bas" />
+                            <img id="up" src="assets/arrow_up.svg" alt="pointe de flèche vers le haut" />
+                        </div>
+                        <div class="program-item hide">
+                            <ul>
+                                <li>Référentiels d'écoconception</li>
+                                <li>Outils de Mesure : SonarEcoCode, GreenFrame</li>
+                                <li>Démarche des 4R</li>
+                                <li>Mesure (KPI)</li>
+                                <li>Analyse du cycle de vie</li>
+                                <li>Ecolabel</li>
+                                <li>Sobriété</li>
+                                <li>Choisir son énergie</li>
+                                <li>Green washing</li>
+                                <li>Communication environnemental</li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col">
+                    <div class="p">
+                        <div class="program-title">
+                            <h3 class="k2d-medium">Architecture</h3>
+                            <img id="down" src="assets/arrow_down.svg" alt="pointe de flèche vers le bas" />
+                            <img id="up" src="assets/arrow_up.svg" alt="pointe de flèche vers le haut" />
+                        </div>
+                        <div class="program-item hide">
+                            <ul class="bai-jamjuree-regular">
+                                <li>Quels sont les critères pour choisir une architecture</li>
+                                <li>Comment améliorer le système d'information</li>
+                                <li>Pollution électrique : choisir son fournisseur d'énergie et son lieu d'exploitation
+                                </li>
+                                <li>Mix Energétique : indicateur à prendre en compte pour adapter l'application</li>
+                                <li>Exploitation</li>
+                                <li>Lieu de travail des équipes / Lieu d'utilisation de l'application</li>
+                                <li>Data Protection et Cryptography : car une démarche durable est aussi une démarche
+                                    durable pour l'humain</li>
+                                <li>Data Dissociation</li>
+                                <li>Fonctionnalité nécessaire</li>
+                                <li>Mise à jours Logiciels</li>
+                                <li>Mise à jours Intelligentes</li>
+                                <li>Architecture Modulaire</li>
+                                <li>"Cas pratique :</li>
+                                <li>Synchro des photos dans le cloud"</li>
+                                <li>Fragilité hardware</li>
+                                <li>Choix du canal de communication</li>
+                                <li>Mise en oeuvre des Email internationnaux</li>
+                                <li>Choix des Push Notification</li>
+                                <li>Low Tech ?</li>
+                                <li>High Tech / Low Tech</li>
+                                <li>Innovation Frugale</li>
+                                <li>Green Tech</li>
+                                <li>Dématérialisation</li>
+                                <li>Hypnose : à éviter</li>
+                                <li>Billet de train / impression</li>
+                                <li>Détection du cancer (exemple)</li>
+                                <li>Microprocesseur (exemple)</li>
+                                <li>Collecte des données</li>
+                                <li>Opérateur de téléphone sobre</li>
+                                <li>IA / Blockchain</li>
+                                <li>NFC : cas du pass navigo et des cartes de paiements</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="p">
+                        <div class="program-title">
+                            <h3 class="k2d-medium">Architecture</h3>
+                            <img id="down" src="assets/arrow_down.svg" alt="pointe de flèche vers le bas" />
+                            <img id="up" src="assets/arrow_up.svg" alt="pointe de flèche vers le haut" />
+                        </div>
+                        <div class="program-item hide">
+                            <ul class="bai-jamjuree-regular">
+                                <li>A chaque nouvelle fonctionnalité : études d'impact à mener </li>
+                                <li>Stratégie de build</li>
+                                <li>Data : taille, archive, log, database</li>
+                                <li>Base de données relationnel et normalisation</li>
+                                <li>Format des données</li>
+                                <li>Transport / Réseaux</li>
+                                <li>Couches Réseaux</li>
+                                <li>SQL / NoSQL</li>
+                                <li>Tailles des données</li>
+                                <li>Stack / Heap</li>
+                                <li>Exceptions</li>
+                                <li>Choix du langage</li>
+                                <li>Some Web site principle</li>
+                                <li>Web cache</li>
+                                <li>3 cliques max</li>
+                                <li>Images web</li>
+                                <li>Choix des technologies</li>
+                                <li>Choix métiers</li>
+                                <li>Source code version</li>
+                                <li>Git best practices</li>
+                                <li>Strategy de Documentation</li>
+                                <li>Log Bombing</li>
+                                <li>Stacktrace</li>
+                                <li>Open Source</li>
+                                <li>A t-on besoin d'un framework</li>
+                                <li>SpringFramework</li>
+                                <li>Docker : image plus sobres</li>
+                                <li>12 principes d'éco-conception (non exhaustif)</li>
+                                <li>Obfuscer vos liens pour un meilleur SEO et pour baisser l'impact de votre site</li>
+                                <li>Luminosité / Couleur</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="p" style="text-align: right;">
+                        <img src="assets/sign.svg" alt="Signature 'Corentin Jechoux'" />
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <script type="text/javascript">
+            document.querySelectorAll('#program .program-title')
+                .forEach(element => {
+                    element.addEventListener('click', event => {
+                        const { target } = event;
+                        if (!target) return;
+                        const isProgramTitle = target.classList.contains('program-title');
+                        const programTitle = isProgramTitle ? target : target.closest('.program-title');
+
+                        programTitle.classList.toggle('opened');
+                        const menu = programTitle.nextElementSibling;
+                        menu.classList.toggle('hide');
+
+                    })
+                });
+        </script>
+
+
+
+
+
         <p>1er paragraphe</p>
         <p>
             Per egestas leo lobortis ullamcorper velit nec dui egestas. Urna pharetra netus, sed phasellus molestie
