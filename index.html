@@ -6,7 +6,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;1,100;1,200;1,400&display=swap');
 
-        @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;700&display=swap');
 
 
         .k2d-thin {
@@ -68,6 +68,12 @@
             font-family: "Bai Jamjuree", sans-serif;
             font-weight: 400;
             font-style: normal;
+        }
+
+        .bai-jamjuree-italic {
+            font-family: "Bai Jamjuree", sans-serif;
+            font-weight: 300;
+            font-style: italic;
         }
 
         .bai-jamjuree-bold {
@@ -153,7 +159,8 @@
         #title h2,
         #title div,
         #keys h2,
-        #program h2 {
+        #program h2,
+        #testimonials h2 {
             max-width: 56.25rem;
             text-align: center;
             margin: auto;
@@ -199,14 +206,17 @@
             margin-top: 0;
         }
 
-        #keys {
+        #keys,
+        #testimonials {
             background-color: var(--light-green);
             padding-left: var(--second-margin);
             padding-right: var(--second-margin);
         }
 
-        #keys h2 {
+        #keys h2,
+        #testimonials h2 {
             color: var(--primary-blue);
+            margin-bottom: var(--primary-margin);
         }
 
         #keys div {
@@ -226,11 +236,14 @@
         #keys img {
             width: 6.25rem;
             height: 6.25rem;
-            margin: auto;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 0;
+            margin-bottom: 0;
         }
 
         #keys article {
-            max-width: 17rem;
+            max-width: 21.6rem;
             display: flex;
             flex-direction: column;
         }
@@ -264,6 +277,10 @@
 
         #program .p {
             margin-top: var(--primary-margin);
+        }
+
+        #program p {
+            font-size: 1.25rem;
         }
 
         #program .program-title {
@@ -315,13 +332,82 @@
         .hide {
             display: none;
         }
+
+        #testimonials article {
+            display: flex;
+            margin-left: 143px;
+            margin-right: 143px;
+
+            color: var(--primary-blue);
+        }
+
+        #testimonials img {
+            width: 7.563rem;
+            height: 7.563rem;
+            border-top-left-radius: 3.75rem;
+            border-bottom-right-radius: 3.75rem;
+            position: absolute;
+            top: -3.75rem;
+            left: -3.75rem;
+        }
+
+        #testimonials article div {
+            max-width: 28.375rem;
+            background-color: #FFF;
+            border-bottom-right-radius: 5.625rem;
+            padding-right: 5.625rem;
+            position: relative;
+
+        }
+
+
+        /* FIXME PX  size -> REM */
+
+
+        #testimonials h3,
+        #testimonials h4 {
+            margin-left: 95px;
+        }
+
+        #testimonials p {
+            margin-left: 53px;
+            margin-bottom: 55px;
+            margin-top: 0;
+            font-size: 20px;
+        }
+
+        #testimonials p::before {
+            content: url('assets/border_corner_bottom_left.svg');
+            position: absolute;
+            left: 14px;
+            bottom: 15px;
+        }
+
+        #testimonials p::after {
+            content: url('assets/border_corner_top_right.svg');
+            position: absolute;
+            right: 34px;
+            top: 84px;
+        }
+
+        #testimonials h3 {
+            font-size: 30px;
+            margin-top: var(--second-margin);
+            margin-bottom: 0;
+        }
+
+        #testimonials h4 {
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: var(--second-margin);
+        }
     </style>
 </head>
 
 <body>
     <header>
         <img src="assets/logo.svg" alt="Logo de Corentin" />
-        <a class="k2d-medium" href="#lePrograme">Le programme</a>
+        <a class="k2d-medium" href="#leProgramme">Le programme</a>
         <a class="k2d-medium" href="#formationSurMesure">Une formation sur mesure ?</a>
         <button class="main k2d-semibold">Réservez votre formation</button>
     </header>
@@ -343,8 +429,8 @@
             <h2 class="k2d-semibold">Points clés du numériques</h2>
             <div>
                 <article>
-                    <img src="assets/co2.svg" alt="co2 équivalent" />
-                    <h3 class="k2d-medium">Empreinte Carbone</h3>
+                    <img src="assets/footprint.svg" alt="co2 équivalent" />
+                    <h3 class="k2d-medium">Ressources Consommées</h3>
                     <p><em class="bai-jamjuree-bold">3 x</em> les ressources (eau, énergies, matières premières)
                         consommées par la France ou l'Angleterre.</p>
                 </article>
@@ -374,8 +460,11 @@
 
         </section>
         <section id="program">
-            <h2 class="k2d-semibold">Le programme</h2>
+            <a name="leProgramme">
+                <h2 class="k2d-semibold">Le programme</h2>
+            </a>
             <p>Voici le détail de sujets abordés pendant votre formation d'une journée.</p>
+
 
             <div class="col-container">
                 <div class="col">
@@ -566,6 +655,31 @@
                     </div>
                 </div>
             </div>
+
+        </section>
+
+        <section id="testimonials">
+            <h2 class="k2d-semibold">Ils ont sauté le pas</h2>
+            <!--
+            
+                 <ul>
+                <li>SIGAL</li>
+                <li>Algofi</li>
+                <li>Inoco</li>
+            </ul>
+            -->
+            <article>
+                <div>
+                    <img src="assets/clients/Nicolas PEDEGERT.jpeg" alt="Nicolas PEDEGERT">
+                    <h3 class="k2d-medium">Nicolas PEDEGERT</h3>
+                    <h4 class="bai-jamjuree-italic">Ingénieur d'affaire chez INOCO</h4>
+                    <p>Corentin est intervenu lors de notre Meet Up dédié au Green IT, afin de nous présenter quels sont
+                        les enjeux du numérique pour assurer un avenir durable, et des solutions applicables
+                        immédiatement à différents niveaux.
+
+                        Présentation dynamique, et très intéressante, merci beaucoup Corentin ;)</p>
+                </div>
+            </article>
 
         </section>
 
