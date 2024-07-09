@@ -138,6 +138,14 @@
             cursor: pointer;
         }
 
+        a {
+            text-decoration: none;
+        }
+
+        a button.main {
+            text-decoration: none;
+        }
+
         button.main:hover {
             background-color: var(--primary-green-hover);
         }
@@ -160,7 +168,11 @@
         #title div,
         #keys h2,
         #program h2,
-        #testimonials h2 {
+        #custom h2,
+        #custom h3,
+        #testimonials h2,
+        #me h2,
+        #linkedin h2 {
             max-width: 56.25rem;
             text-align: center;
             margin: auto;
@@ -193,28 +205,35 @@
         #keyLearn ul {
             max-width: 49.25rem;
             margin: auto;
-            /* TODO à faire une fois pour toute pour pour "section *" ... ????? */
         }
 
-        #keyLearn ul li {
+        #keyLearn ul li,
+        #custom ul li,
+        #me ul li {
             list-style: url('assets/bullet.svg');
             margin-top: 0.938rem;
             font-size: 1.25rem;
         }
 
-        #keyLearn ul li:first-child {
+        #keyLearn ul li:first-child,
+        #custom ul li:first-child,
+        #me ul li:first-child {
             margin-top: 0;
         }
 
         #keys,
-        #testimonials {
+        #testimonials,
+        #me,
+        #linkedin {
             background-color: var(--light-green);
-            padding-left: var(--second-margin);
-            padding-right: var(--second-margin);
+            padding-left: 8.938rem;
+            padding-right: 8.938rem;
         }
 
         #keys h2,
-        #testimonials h2 {
+        #testimonials h2,
+        #me h2,
+        #linkedin h2 {
             color: var(--primary-blue);
             margin-bottom: var(--primary-margin);
         }
@@ -223,9 +242,11 @@
             display: flex;
             justify-content: space-between;
             align-items: stretch;
+            flex-wrap: wrap;
         }
 
-        #keys h3 {
+        #keys h3,
+        #me h3 {
             font-size: 1.875rem;
             color: var(--primary-blue);
             text-align: center;
@@ -252,6 +273,7 @@
             font-size: 1.25rem;
         }
 
+        #custom,
         #program {
             color: #FFF;
             background-color: var(--dark-green);
@@ -261,10 +283,19 @@
         #program .col-container {
             display: flex;
             margin-right: 8.938rem;
+            flex-wrap: wrap;
+        }
+
+        #program .col {
+            width: 50rem;
         }
 
         #program .col:first-child {
             margin-right: var(--primary-margin);
+        }
+
+        #program .col:nth-child(2) {
+            margin-left: var(--primary-margin);
         }
 
         #program .col {
@@ -281,6 +312,7 @@
 
         #program p {
             font-size: 1.25rem;
+            max-width: 50rem;
         }
 
         #program .program-title {
@@ -339,8 +371,8 @@
 
         #testimonials article {
             display: flex;
-            margin-left: 143px;
-            margin-right: 143px;
+            margin-left: 8.938rem;
+            margin-right: 8.938rem;
 
             color: var(--primary-blue);
             justify-content: space-around;
@@ -366,45 +398,158 @@
         }
 
 
-        /* FIXME PX  size -> REM */
+
 
 
         #testimonials h3,
         #testimonials h4 {
-            margin-left: 95px;
+            margin-left: 5.938rem;
         }
 
         #testimonials p {
-            margin-left: 53px;
-            margin-bottom: 55px;
+            margin-left: 3.313rem;
+            margin-bottom: 3.438rem;
             margin-top: 0;
-            font-size: 20px;
+            font-size: 1.25rem;
         }
 
         #testimonials p::before {
             content: url('assets/border_corner_bottom_left.svg');
             position: absolute;
-            left: 14px;
-            bottom: 15px;
+            left: 0.875rem;
+            bottom: 0.938rem;
         }
 
         #testimonials p::after {
             content: url('assets/border_corner_top_right.svg');
             position: absolute;
-            right: 34px;
-            top: 84px;
+            right: 2.125rem;
+            top: 5.25rem;
         }
 
         #testimonials h3 {
-            font-size: 30px;
+            font-size: 1.875rem;
             margin-top: var(--second-margin);
             margin-bottom: 0;
         }
 
         #testimonials h4 {
-            font-size: 20px;
+            font-size: 1.25rem;
             margin-top: 0;
             margin-bottom: var(--second-margin);
+        }
+
+        #custom h2,
+        #custom h3 {
+            margin-bottom: var(--primary-margin);
+        }
+
+        #custom h3 {
+            margin-bottom: var(--primary-margin);
+            font-size: 1.875rem;
+        }
+
+        #custom ul {
+            max-width: 62.313rem;
+            margin: auto;
+        }
+
+        #custom button {
+            margin-top: var(--primary-margin);
+            max-width: 56.25rem;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+
+        #me {
+            padding-left: 8.938rem;
+        }
+
+        #me h3 {
+            text-align: left;
+        }
+
+        #me article {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #me p {
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+        }
+
+        #myself-container {
+            position: relative;
+            width: 17.813rem;
+        }
+
+        #myself-container span {
+            display: block;
+            width: 17.375rem;
+            height: 14.688rem;
+            background-color: var(--primary-green);
+            position: absolute;
+            top: 4.5rem;
+            left: 0.5rem;
+            border-top-left-radius: 5rem;
+            border-bottom-right-radius: 3.688rem;
+        }
+
+        #myself {
+            width: 18.313rem;
+            z-index: 10;
+            position: absolute;
+            left: 0;
+            border-bottom-right-radius: 4.938rem;
+        }
+
+        #me button {
+            color: #1FE43D;
+            background-color: var(--dark-green);
+            width: 36.563rem;
+        }
+
+        #linkedin h2::before,
+        #linkedin h2::after {
+            content: url('assets/arrow_down_green.svg');
+            margin-left: var(--primary-margin);
+            margin-right: var(--primary-margin);
+        }
+
+        #linkedin div {
+            display: flex;
+            justify-content: space-between;
+            padding-left: 8.938rem;
+            padding-right: 8.938rem;
+            background: rgb(8, 41, 66);
+            background: linear-gradient(0deg, rgba(8, 41, 66, 1) 70%, rgba(243, 251, 244, 1) 70%);
+        }
+
+        #linkedin div img {
+            width: 24.313rem;
+            border-radius: 0.625rem;
+        }
+
+        #linkedin {
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        footer {
+            padding-top: calc(2 * var(--primary-margin));
+            padding-bottom: calc(2 * var(--primary-margin));
+            background-color: var(--primary-blue);
+            text-align: center;
+        }
+
+        @media screen and (width < 1230px) {
+            header a.k2d-medium {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -414,14 +559,20 @@
         <img src="assets/logo.svg" alt="Logo de Corentin" />
         <a class="k2d-medium" href="#leProgramme">Le programme</a>
         <a class="k2d-medium" href="#formationSurMesure">Une formation sur mesure ?</a>
-        <button class="main k2d-semibold">Réservez votre formation</button>
+        <a href="https://book.stripe.com/9AQ7u78v79IE8p23cd">
+            <button class="main k2d-semibold">Réservez votre formation</button>
+        </a>
     </header>
     <main>
         <section id="title">
             <h1 class="k2d-bold">Apprenez à concevoir des applications <em>sobre</em>
                 et <em>éco-conçu</em></h1>
             <h2 class="k2d-regular-italic">Devenez autonome dans l'art du GreenIT</h2>
-            <div><button class="main k2d-semibold">Réservez votre formation complète</button></div>
+            <div>
+                <a href="https://book.stripe.com/9AQ7u78v79IE8p23cd">
+                    <button class="main k2d-semibold">Réservez votre formation complète</button>
+                </a>
+            </div>
         </section>
         <section id="keyLearn">
             <ul>
@@ -615,7 +766,7 @@
 
                     <div class="p">
                         <div class="program-title">
-                            <h3 class="k2d-medium">Architecture</h3>
+                            <h3 class="k2d-medium">Dev</h3>
                             <img id="down" src="assets/arrow_down.svg" alt="pointe de flèche vers le bas" />
                             <img id="up" src="assets/arrow_up.svg" alt="pointe de flèche vers le haut" />
                         </div>
@@ -699,30 +850,130 @@
 
         </section>
 
-        <script type="text/javascript">
-            const PROGRAM_TITLE = 'program-title';
-            document.querySelectorAll(`#program .${PROGRAM_TITLE}`)
-                .forEach(element => {
-                    element.addEventListener('click', event => {
-                        const { target } = event;
-                        if (!target) return;
-                        const isProgramTitle = target.classList.contains(PROGRAM_TITLE);
-                        const programTitle = isProgramTitle ? target : target.closest(`.${PROGRAM_TITLE}`);
+        <section id="custom">
+            <a name="custom">
+                <h2 class="k2d-semibold">Une Formation Green-IT sur mesure ?</h2>
+            </a>
+            <h3 class="k2d-medium">Pour le Green-IT, vous souhaitez :</h3>
+            <ul>
+                <li>Apprendre plus, et faire monter en compétence vos équipes non-tech : manager, RH, commerciaux,
+                    etc... ?</li>
+                <li>Donner les clés à vos équipes de développement : développeur, ops, product owner, testeur ?</li>
+                <li>Mettre en place un Meetup</li>
+            </ul>
 
-                        programTitle.classList.toggle('opened');
-                        const menu = programTitle.nextElementSibling;
-                        menu.classList.toggle('hide');
-
-                    })
-                });
-        </script>
+            <a href="https://www.linkedin.com/in/corentinjechoux/" target="_blank">
+                <button class="main k2d-semibold">Contactez-moi via Linkedin</button>
+            </a>
 
 
 
+        </section>
 
+        <section id="me">
+            <h2 class="k2d-semibold">Votre formateur</h2>
+
+            <article>
+
+                <div>
+                    <h3 class="k2d-medium">Je m'appelle Corentin Jechoux</h3>
+
+                    <ul>
+                        <li>J'ai commencé à concevoir des applications et systèmes d'informations en 2006. Mais j'ai
+                            réalisé
+                            mon
+                            1er "PacMan" en classe de CM2, à 10 ans, en Basic.</li>
+                        <li>Je suis développeur fullstack, sur des architectures client légers (web) et client lourd.
+                        </li>
+                        <li>J'ai travaillé sur les technologies JAVA, Web, Javascript, Typescript et Rust, SQL et NoSQL
+                            ainsi
+                            que sur des problématiques de performances.</li>
+                        <li>J'ai commencé en tant que développeur, puis, tech-lead et manager. Je suis actuellement
+                            freelance :
+                            je code et je forme.</li>
+                        <li>J'ai construit cette formation à partir de mon expérience et de mes lectures.</li>
+                    </ul>
+
+
+                    <p>
+                        <span>J'ai enrichi et solidifié ma formation après avoir obtenu 3 certifications de
+                        </span>&nbsp;
+                        <a href="https://www.greenit.fr/" target="_blank">
+                            <img src="assets/green-it-asso.svg" alt="Association Green-IT.fr" />
+                        </a>.
+                    </p>
+                </div>
+
+                <div id="myself-container">
+                    <img id="myself" src="assets/Corentin_Jechoux.png" alt="Corentin Jechoux" />
+                    <span>&nbsp;</span>
+                </div>
+            </article>
+
+            <article>
+                <a href="https://drive.google.com/file/d/1wWV3RitJhKNWLIP91klGoEC0rd-Ob7tl/view" target="_blank">
+                    <button class="main k2d-semibold">ACV</button>
+                </a>
+
+                <a href="https://drive.google.com/file/d/1xXwqOoShALHxfYUOIwCObIcbzF05E55p/view" target="_blank">
+                    <button class="main k2d-semibold">Éco-conception de Service Numérique</button>
+                </a>
+
+                <a href="https://drive.google.com/file/d/1tgDnYWFep1Qz1fGKoLg4uXGsKo98g-kL/view" target="_blank">
+                    <button class="main k2d-semibold">Green IT & Numérique Responsable</button>
+                </a>
+
+            </article>
+
+
+        </section>
+
+        <section id="linkedin">
+            <h2 class="k2d-semibold">Retrouvez-moi sur LinkedIn</h2>
+            <div>
+                <a href="https://www.linkedin.com/posts/corentinjechoux_greenit-greenit-greenit-activity-7202224768866009088-SbmQ/?utm_source=share&utm_medium=member_desktop"
+                    target="_blank">
+                    <img src="assets/linkedin/Performance_2024-07-09_23-44.png"
+                        alt="Publication LinedIn à propos de la performance et du Green-IT" />
+                </a>
+
+                <a href="https://www.linkedin.com/posts/corentinjechoux_python-et-intelligence-artificielle-activity-7046432625359544320-RKkA/?utm_source=share&utm_medium=member_desktop"
+                    target="_blank">
+                    <img src="assets/linkedin/Python_AI_2024-07-09_23-41.png"
+                        alt="Publication LinedIn à propos de Python et de l'Intelligence artificielle et du Green-IT" />
+                </a>
+
+                <a href="https://www.linkedin.com/posts/corentinjechoux_greenit-securit%C3%A9-activity-7056600707969232896-RoAw/?utm_source=share&utm_medium=member_desktop"
+                    target="_blank">
+                    <img src="assets/linkedin/Security_2024-07-09_23-44.png"
+                        alt="Publication LinedIn à propos de la sécurité et du Green-IT" />
+                </a>
+            </div>
+        </section>
 
 
     </main>
+
+    <footer>
+        <img src="assets/Corentin_Jechoux_wight.svg" alt="Corentin Jechoux" />
+    </footer>
+    <script type="text/javascript">
+        const PROGRAM_TITLE = 'program-title';
+        document.querySelectorAll(`#program .${PROGRAM_TITLE}`)
+            .forEach(element => {
+                element.addEventListener('click', event => {
+                    const { target } = event;
+                    if (!target) return;
+                    const isProgramTitle = target.classList.contains(PROGRAM_TITLE);
+                    const programTitle = isProgramTitle ? target : target.closest(`.${PROGRAM_TITLE}`);
+
+                    programTitle.classList.toggle('opened');
+                    const menu = programTitle.nextElementSibling;
+                    menu.classList.toggle('hide');
+
+                })
+            });
+    </script>
 </body>
 
 </html>
