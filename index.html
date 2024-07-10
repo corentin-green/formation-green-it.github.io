@@ -380,7 +380,7 @@
             margin-right: 8.938rem;
 
             color: var(--primary-blue);
-            justify-content: space-around;
+            justify-content: space-between;
         }
 
         #testimonials img {
@@ -551,9 +551,65 @@
             text-align: center;
         }
 
+        @media screen and (width < 2020px) {
+            #me article:nth-child(3) {
+                flex-wrap: wrap;
+            }
+
+            #me article a {
+                margin-top: var(--primary-margin);
+            }
+        }
+
         @media screen and (width < 1230px) {
             header a.k2d-medium {
                 display: none;
+            }
+
+            #program .col-container {
+                flex-wrap: wrap;
+            }
+
+            #program .col:not(:first-child) {
+                margin-top: var(--primary-margin);
+                margin-left: 0;
+            }
+
+            #program .col:first-child {
+                margin-right: 0;
+            }
+
+            #testimonials article {
+                flex-wrap: wrap;
+            }
+
+            #testimonials article div:not(:first-child) {
+                margin-top: calc(var(--primary-margin) + 3.75rem);
+            }
+
+            #me article:first-child {
+                flex-wrap: wrap-reverse;
+            }
+
+            #me article {
+                flex-wrap: wrap;
+            }
+
+            #me article a {
+                margin-top: var(--primary-margin);
+                width: 100%;
+            }
+
+            #me article #myself-container {
+                display: none;
+            }
+
+            #linkedin div {
+                flex-wrap: wrap;
+            }
+
+            #linkedin div a {
+                margin-top: var(--primary-margin);
             }
         }
     </style>
@@ -951,7 +1007,7 @@
                 </a>
             </div>
         </section>
-        <!-- -->>
+        <!-- -->
 
     </main>
 
